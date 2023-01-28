@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        /* CSS for the bar chart */
+        .bar {
+            width: 25px;
+            height: 100px;
+            margin-right: 10px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+
+    <script>
+        // Data for the chart
+        var data = [1, 2, 3, 4, 5];
+
+        // Select the chart div
+        var chart = d3.select("#chart");
+
+        // Bind the data to the chart and create the bars
+        chart.selectAll("div")
+            .data(data)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", function(d) {
+                return d * 10 + "px";
+            });
+    </script>
+</body>
+</html>
